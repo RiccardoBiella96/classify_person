@@ -1,0 +1,17 @@
+- ho installato screen (terminale ssh)
+- ho installato gli strumenti sdk android (in realtà c'è dentro tanta roba ma a me serve solo fastboot)
+- ho installato MDT command line tool che server per eseguire attività su Mendel device collegati (dev board)
+- siccome la mia dev board è stata prodotta prima del 10 aprile 2019 devo installare un driver che mi permette di comunicare con dev board sulla console seriale
+- dopo aver collegato la dev board tramite la porta seriale determino il nome del dispositivo per la connessione seriale
+- apro ora su dmesg ttyUSB0 la connessione 
+
+
+FUNZIONA:
+
+con questo abbiamo i bounding box su tutto, anche sulle persone, ma usiamo un comando coral:
+
+/usr/share/edgetpu/examples$ edgetpu_detect --model models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite --label models/coco_labels.txt
+
+con questo abbiamo i bounding box su tutto, anche sulle persone, e usiamo uno script python e gstreamer per ottenere lo stream di immagini:
+
+~/riccardo/examples-camera/gstreamer$ python3 detect.py 
